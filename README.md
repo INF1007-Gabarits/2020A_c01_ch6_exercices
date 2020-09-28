@@ -1,6 +1,6 @@
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod-redirect-0.herokuapp.com/)
 
-# Exercices en vrac (chapitre 5)
+# Exercices en vrac (chapitre 6)
 
 Avant de commencer, consultez les instructions à suivre dans [instructions.md](instructions.md)
 
@@ -8,30 +8,50 @@ Avant de commencer, consultez les instructions à suivre dans [instructions.md](
 
 Compléter les quelques exercices suivants en modifiant le code de [exercice.py](exercice.py):
 
-1. Écrire un programme qui lit un nombre et affiche sa valeur absolue
-2. Dans un conte américain, huit petits canetons s'appellent respectivement : Jack, Kack, Lack, Mack, Nack, Oack, Pack et Qack. Écrire un petit script qui génère tous ces noms à partir des deux chaînes suivantes : prefixes = 'JKLMNOP' et suffixe = 'ack'
-3. Calculer la somme des 100 premiers nombres entiers premiers
-4. Calculer la factorielle d’un nombre entier
-5. Utiliser l’instruction 'continue' pour modifier une boucle for d’affichage de tous les entiers de 1 à 10 compris, sauf lorsque la variable de boucle vaut 5
+1. Écrire un programme qui demande à l’utilisateur d’entrer 10 valeurs (entier, float, str), et qui vérifie par la suite si la liste fournie est ordonnée.
+2. Deux mots sont des anagrammes si vous pouvez réarranger les lettres de l'un pour en former l'autre (par exemple ALEVIN et NIVELA sont des anagrammes). Écrivez un programme qui demande deux chaînes de caractère et qui vérifie si ce sont des anagrammes.
+3. Écrire un programme qui vérifie sur une liste contient des doublons, c’est-à-dire si la liste ne contient que des éléments uniques.
+4. Écrire un programme qui calcule la moyenne des notes rentrées dans un dictionnaire ayant pour clés le nom des étudiants. Par la suite, le programme doit retourner le nom de l’étudiant ayant la meilleure note, dans la même structure de données.
+5. À partir d’une phrase donnée par l’utilisateur, écrire un programme qui construit et affiche l’histogramme de cette phrase. Par la suite, afficher toutes les lettres qui sont utilisées plus de 5 fois dans la phrase, en ordre décroissant d’utilisation (le plus fréquent en premier).
+6. Écrire un programme qui permet de sauvegarder les ingrédients nécessaires à plusieurs recettes, dans une seule structure de données. Par la suite, écrire un programme qui affiche les ingrédients d’une recette, en vérifiant au préalable si cette recette est dans notre livre de recettes.
 
 ### À compléter
 Vous devez compléter les fonctions suivantes du fichier [exercice.py](exercice.py).
 
 ```python
-def convert_to_absolute() -> float:
-    return 0.0
+def order(values: list = None) -> bool:
+    if values is None:
+        # TODO: demander les valeurs ici
+        pass
 
-def use_prefixes() -> List[str]:
-    prefixes, suffixes = 'JKLMNOP', 'ack'
+    return False
 
-    return [""]
+def anagrams(words: list = None) -> bool:
+    if words is None:
+        # TODO: demander les mots ici
+        pass
 
-def prime_integer_summation() -> int:
-    return 0
+    return False
 
-def factorial(number: int) -> int:
-    return 0
+def contains_doubles(items: list) -> bool:
+    return False
 
-def use_continue() -> None:
+def best_grades(student_grades: dict) -> dict:
+    # TODO: Retourner un dictionnaire contenant le nom de l'étudiant ayant la meilleure moyenne ainsi que sa moyenne
+    return {}
+
+def histogram(sentence: str) -> tuple:
+    # TODO: Creer l'histogramme a l'aide d'un dictionnaire
+    #       Afficher l'histogramme et les lettres les plus frequentes
+    #       Retourner l'histogramme et le tableau de lettres
+
+    return {}, []
+
+def get_recipes():
+    # TODO: Demander le nom d'une recette, puis ses ingredients et enregistrer dans une structure de données 
+    pass
+
+def print_recipe(ingredients) -> None:
+    # TODO: Demander le nom d'une recette, puis l'afficher si elle existe
     pass
 ```

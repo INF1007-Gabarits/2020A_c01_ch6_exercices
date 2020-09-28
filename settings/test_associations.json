@@ -1,14 +1,22 @@
 {
-  "test_prefixes": {
-    "name": "Utilisation des préfixes",
+  "test_order": {
+    "name": "Ordre",
     "points": 1
   },
-  "test_summation": {
-    "name": "Calcul de la sommation",
+  "test_anagram": {
+    "name": "Anagrammes",
     "points": 1
   },
-  "test_factorial": {
-    "name": "Calcul de la factorielle",
+  "test_doubles": {
+    "name": "Doublons",
+    "points": 1
+  },
+  "test_grades": {
+    "name": "Notes",
+    "points": 1
+  },
+  "test_histogram": {
+    "name": "Histogrammes",
     "points": 1
   }
 }

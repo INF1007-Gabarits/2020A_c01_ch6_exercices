@@ -2,43 +2,68 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import List
+def order(values: list = None) -> bool:
+    if values is None:
+        # TODO: Demander les valeurs ici
+        pass
+
+    return False
 
 
-def convert_to_absolute() -> float:
-    return 0.0
+def anagrams(words: list = None) -> bool:
+    if words is None:
+        # TODO: Demander les mots ici
+        pass
+
+    return False
 
 
-def use_prefixes() -> List[str]:
-    prefixes, suffixes = 'JKLMNOP', 'ack'
-
-    return [""]
+def contains_doubles(items: list) -> bool:
+    return False
 
 
-def prime_integer_summation() -> int:
-    return 0
+def best_grades(student_grades: dict) -> dict:
+    # TODO: Retourner un dictionnaire contenant le nom de l'étudiant ayant la meilleure moyenne ainsi que sa moyenne
+    return {}
 
 
-def factorial(number: int) -> int:
-    return 0
+def histogram(sentence: str) -> tuple:
+    # TODO: Créer l'histogramme a l'aide d'un dictionnaire
+    #       Afficher l'histogramme et les lettres les plus fréquentes
+    #       Retourner l'histogramme et le tableau de lettres
+
+    return {}, []
 
 
-def use_continue() -> None:
+def get_recipes():
+    # TODO: Demander le nom d'une recette, puis ses ingrédients et enregistrer dans une structure de données 
+    pass
+
+
+def print_recipe(ingredients) -> None:
+    # TODO: Demander le nom d'une recette, puis l'afficher si elle existe
     pass
 
 
 def main() -> None:
-    print(f"La valeur absolue du nombre est {convert_to_absolute()}")
+    print(f"On essaie d'ordonner les valeurs...")
+    order()
 
-    print(f"La liste des noms générés avec les préfixes est: {use_prefixes()}")
+    print(f"On vérifie les anagrammes...")
+    anagrams()
 
-    print(f"La somme des nombres de 0 à 100 est: {prime_integer_summation()}")
+    my_list = [3, 3, 5, 6, 1, 1]
+    print(f"Ma liste contient-elle des doublons? {contains_doubles(my_list)}")
 
-    number = 10
-    print(f"La factiorelle du nombre {number} est: {factorial(number)}")
+    grades = {"Bob": [90, 65, 20], "Alice": [85, 75, 83]}
+    name, result = best_grades(grades)
+    print(f"{name} a la meilleure moyenne: {result}")
     
-    print(f"L'affichage de la boucle est:")
-    use_continue()
+    print("On enregistre les recettes...")
+    recipes = get_recipes()
+
+    print("On affiche une recette au choix...")
+    print_recipe(recipes)
 
 
 if __name__ == '__main__':

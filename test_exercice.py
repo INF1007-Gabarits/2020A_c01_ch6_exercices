@@ -1,53 +1,87 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import math
 import os
 import sys
 import unittest
+from collections import Counter
 
 import exercice
 
 
 class TestExercice(unittest.TestCase):
-    def test_prefixes(self):
-        output = exercice.use_prefixes()
-        answer = ["Jack", "Kack", "Lack", "Mack", "Nack", "Oack", "Pack", "Qack"]
+    def test_order(self):
+        values = [
+            [1, 9, -2, 6],
+            ["a", "2", "hello"]
+        ]
+
+        output = [exercice.order(v) for v in values]
+        answer = [sorted(v) for v in values]
 
         self.assertListEqual(
             output,
             answer,
-            'Mauvaise identification de la parité de la longueur de la chaine'
+            'Mauvais ordre'
         )
 
-    def test_summation(self):
-        primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53,
-            59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131,
-            137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199,
-            211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281,
-            283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373,
-            379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457,
-            461, 463, 467, 479, 487, 491, 499, 503, 509, 521, 523, 541]
+    def test_anagram(self):
+        words = [
+            ["allo", "lola"],
+            ["toto", "le clown"]
+        ]
         
-        answer = sum(primes)
-        output = exercice.prime_integer_summation()
+        answer = [True, False]
+        output = [exercice.anagrams(v) for v in words]
 
         self.assertEqual(
             output,
             answer,
-            'Retrait du mauvais caractère'
+            'Erreur dans la vérification de l\'anagramme'
         )
 
-    def test_factorial(self):
-        values = [1, 3, 8, 10]
+    def test_doubles(self):
+        values = [
+            [1, 2, 3, 4],
+            [1, 1, 2, 3, 5, 8]
+        ]
 
-        output = [exercice.factorial(v) for v in values]
-        answer = [math.factorial(v) for v in values]
+        output = [exercice.contains_doubles(v) for v in values]
+        answer = [False, True]
 
         self.assertListEqual(
             output,
             answer,
-            'Erreur dans le remplacement de caractère'
+            'Erreur dans les doublons'
+        )
+
+    def test_grades(self):
+        values = [
+            {"Sam": [100, 100, 100], "Sei": [0, 0, 0]}
+        ]
+
+        output = [exercice.best_grades(v) for v in values]
+        answer = [{"Sam": 100}]
+
+        self.assertDictEqual(
+            output,
+            answer,
+            'Erreur dans les notes'
+        )
+
+    def test_histogram(self):
+        sentences = [
+            "Bonjour, bonjour",
+            "J'adore mon baccalaureat en genie informatique/logiciel"
+        ]
+
+        output = [exercice.histogram(s) for s in sentences]
+        answer = [dict(Counter(s)) for s in sentences]
+
+        self.assertDictEqual(
+            output,
+            answer,
+            'Erreur dans les histogrammes'
         )
 
 
